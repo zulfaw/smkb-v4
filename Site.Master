@@ -10,39 +10,34 @@
     <link rel="stylesheet" href="<%=ResolveClientUrl("~/assets/bootstrap/css/bootstrap.min.css")%>" />
     <link rel="stylesheet" href="<%=ResolveClientUrl("~/styles.css")%>" />
 
-
     <script src='<%=ResolveClientUrl("~/assets/script/script.js")%>'></script>
 
-
-
     <!-- FONT LINK -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href="<%=ResolveClientUrl("~/Content/font-awesome/css/style.css")%> " rel="stylesheet" />
 
     <!-- ICON LINK -->
     <link rel="stylesheet"
-        href="./assets/line-awesome-1.3.0/1.3.0/css/line-awesome.min.css">
-
+        href="<%=ResolveClientUrl("~/Content/font-awesome/css/line-awesome.min.css")%> "/>
     <link rel="stylesheet"
-        href="./assets/line-awesome-1.3.0/1.3.0/css/all.min.css">
-    <link rel="stylesheet" href="./assets/line-awesome-1.3.0/1.3.0/css/font-awesome.min.css">
+        href="<%=ResolveClientUrl("~/Content/font-awesome/css/all.min.css")%> ">
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/font-awesome/css/font-awesome.min.css")%> ">
 
-    <link rel="stylesheet" href="./assets/line-awesome-1.3.0/1.3.0/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="<%=ResolveClientUrl("~/Content/font-awesome/css/selectize.bootstrap3.min.css")%> " integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 
     <!-- SCRIPT CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    <script src="<%=ResolveClientUrl("~/Content/js/popper.min.js")%>"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    <script src="<%=ResolveClientUrl("~/Content/js/bootstrap.min.js")%> "
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+        <script src="<%=ResolveClientUrl("~/Content/js/jquery.min.js")%> "></script>
+    <script src="Content/js/selectize.min.js"
         integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 
     <!-- SCRIPT LOCAL -->
     <script src='<%=ResolveClientUrl("~/assets/script/script.js")%>'></script>
     <script src='<%=ResolveClientUrl("~/assets/bootstrap/js/bootstrap.min.js")%>'></script>
-
 
 </head>
  
@@ -59,7 +54,7 @@
                         <ItemTemplate>
                         <div class="menu-item" onclick="location.href='<%=ResolveClientUrl("~/FORMS/9702.aspx")%>?kodsub=<%#Trim(Eval("Kod_Sub"))%>';">
                             <div class="item-icon">
-                                <i class="las la-<%#Trim(Eval("Nama_Icon"))%>"></i>
+                                <img src="<%=ResolveClientUrl("~/Images/")%><%#Trim(Eval("icon_location"))%>">
                             </div>
                             <div class="item-title">
                                 <a><%#Trim(Eval("Nama_Sub")) %></a>
@@ -78,36 +73,27 @@
                     <i class="fa fa-angle-left" style="font-size:36px"></i>
                     <a>Menu Utama</a>
                 </div>
-
-                <div class="account-info light">
-                    <a><%=Session("ssusrName")%></a>
+                <div class="account-info">
                     <div class="action">
                         <div class="profile" onclick="menuToggle();">
-                            <img src="https://portal.utem.edu.my/oas/directory/bak/image.asp?myStaff=<%=Session("ssusrID")%>" />
+                            <img src="../assets/images/user.png" />
                         </div>
                         <div class="menu">
-                            <h3><%=Session("ssusrName")%><br /><span><%=Session("ssusrPost")%></span></h3>
+                            <h3>Your Name<br /><span>System Admin</span></h3>
                             <ul>
-                              <li>
-                                <i class="las la-sign-out-alt"></i>
-                                <a href="#">Logout</a>
-                              </li>
+                                <li>
+                                    <a href="#">My profile</a>
+                                </li>
+                                </li>
+                                <li>
+                                    <a href="#">Logout</a>
+                                </li>
                             </ul>
-                          </div>
+                        </div>
                     </div>
                 </div>
+            </div>  
 
-                
-              </div>
-
-
-
-
-<%--            <div class="content">
-                <asp:ContentPlaceHolder ID="TabContent" runat="server">
-
-                </asp:ContentPlaceHolder>    
-            </div>--%>
             <div class="content">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
 
@@ -117,6 +103,6 @@
         </div>
 
     </div>
-   
+    
 </body>
 </html>
